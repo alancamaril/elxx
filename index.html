@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>La Gaceta Digital | Edición Multimedia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=UnifrakturMaguntia&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- MENÚ HAMBURGUESA -->
+<div class="menu-movil">
+  <div class="logo-movil">La Gaceta</div>
+  <button class="hamburger" id="hamburgerBtn">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+<div class="menu-sidebar" id="menuSidebar">
+  <button class="close-menu" id="closeMenuBtn">✕</button>
+  <ul>
+    <li><a href="#" data-seccion="deporte">⚽ Deporte</a></li>
+    <li><a href="#" data-seccion="musica">🎵 Música</a></li>
+    <li><a href="#" data-seccion="moda">👗 Moda</a></li>
+    <li><a href="#" data-seccion="tecnologia">💻 Tecnología</a></li>
+    <li><a href="#" data-seccion="comida">🍽️ Comida</a></li>
+  </ul>
+</div>
+<div class="overlay-menu" id="overlayMenu"></div>
+
+<!-- TICKER NOTICIAS -->
+<div class="ticker">
+  <div class="ticker-label">Última hora</div>
+  <div style="overflow:hidden; flex:1">
+    <div class="ticker-track">
+      <span>⚡ Real Madrid campeón de Europa</span>
+      <span>🎤 Taylor Swift bate récord de ventas</span>
+      <span>👗 Moda sostenible revoluciona pasarelas</span>
+      <span>🚀 Google presenta ordenador cuántico doméstico</span>
+      <span>🌮 México elegido mejor destino gastronómico 2026</span>
+      <span>⚡ Real Madrid campeón de Europa</span>
+      <span>🎤 Taylor Swift bate récord de ventas</span>
+    </div>
+  </div>
+</div>
+
+<!-- CABECERA PRINCIPAL -->
+<header>
+  <div class="top-bar">
+    <span id="fecha-hoy"></span>
+    <span>Edición Digital · Número 1,847</span>
+    <span>Ciudad de México</span>
+  </div>
+  <div class="masthead">La Gaceta</div>
+  <div class="tagline">Deporte · Música · Moda · Tecnología · Comida</div>
+</header>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <button class="active" onclick="cambiarSeccion('deporte', this)">⚽ Deporte</button>
+  <button onclick="cambiarSeccion('musica', this)">🎵 Música</button>
+  <button onclick="cambiarSeccion('moda', this)">👗 Moda</button>
+  <button onclick="cambiarSeccion('tecnologia', this)">💻 Tecnología</button>
+  <button onclick="cambiarSeccion('comida', this)">🍽️ Comida</button>
+</nav>
+
+<main>
+  <!-- ==================== DEPORTE ==================== -->
+  <div class="seccion visible" id="sec-deporte">
+    <div class="section-title">Deportes · Análisis y Cobertura Especial</div>
+    <div class="grid grid-main">
+      <div class="card featured" onclick="abrirModal('dep1')">
+        <span class="emoji">🏆</span>
+        <div class="kicker">Fútbol · Champions League</div>
+        <h2>Real Madrid conquista su Decimoctava: La noche de la épica blanca</h2>
+        <hr class="divider-h">
+        <p>Remontada histórica ante el City con doblete de Vinicius y gol de Bellingham en el minuto 89. Ancelotti supera su propio récord.</p>
+        <div class="byline">Por Juan Fernández · Enviado especial</div>
+      </div>
+      <div class="card small" onclick="abrirModal('dep2')">
+        <div class="kicker">NBA · Final del Oeste</div>
+        <h2>LeBron James (41 años) firma 38 puntos y elimina a Celtics</h2>
+        <div class="byline">Por Staff · Ayer</div>
+      </div>
+      <div class="card small" onclick="abrirModal('dep3')">
+        <div class="kicker">F1 · Gran Premio de Mónaco</div>
+        <h2>Verstappen domina de principio a fin; Checo Pérez remonta al podio</h2>
+        <div class="byline">Por Redacción · Hoy</div>
+      </div>
+    </div>
+    <div class="layout-with-sidebar">
+      <div>
+        <div class="grid grid-dos-columnas">
+          <div class="card" onclick="abrirModal('dep4')">
+            <div class="kicker">🎾 Roland Garros</div>
+            <h2>Alcaraz y Sinner: la nueva era del tenis mundial se enfrenta en París</h2>
+            <p>Duelo generacional con el número 1 en juego. Ambos llegan invictos.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('dep5')">
+            <div class="kicker">🥊 Boxeo · Canelo vs Yermakhanov</div>
+            <h2>Canelo Álvarez: "Será la pelea más grande en la historia de México"</h2>
+            <p>Estadio Azteco, 100 mil entradas agotadas en preventa.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('dep6')">
+            <div class="kicker">⚽ Liga MX · Final</div>
+            <h2>América vs Chivas: El Superclásico definirá al campeón del fútbol mexicano</h2>
+            <p>Ida y vuelta con entradas agotadas desde hace semanas.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('dep7')">
+            <div class="kicker">🏀 Euroleague</div>
+            <h2>Real Madrid de baloncesto conquista la Euroliga tras vibrante final</h2>
+            <p>Campazzo MVP de la final con 22 puntos y 11 asistencias.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-title">Resultados y marcadores</div>
+        <div class="sidebar-item" onclick="abrirModal('dep1')">
+          <div class="si-num">01</div>
+          <div class="si-title">Real Madrid 3 – 2 Man City</div>
+          <div class="si-sub">Final Champions / Wembley</div>
+        </div>
+        <div class="sidebar-item" onclick="abrirModal('dep2')">
+          <div class="si-num">02</div>
+          <div class="si-title">Lakers 112 – 108 Celtics</div>
+          <div class="si-sub">LeBron 38 pts / Juego 6</div>
+        </div>
+        <div class="sidebar-item" onclick="abrirModal('dep6')">
+          <div class="si-num">03</div>
+          <div class="si-title">América 2-1 Chivas (ida)</div>
+          <div class="si-sub">Final Liga MX · Vuelta domingo</div>
+        </div>
+        <div class="sidebar-item" onclick="abrirModal('dep3')">
+          <div class="si-num">04</div>
+          <div class="si-title">Verstappen · Checo P3</div>
+          <div class="si-sub">F1 Mónaco · Clasificación</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MÚSICA ==================== -->
+  <div class="seccion" id="sec-musica">
+    <div class="section-title">Música · Lanzamientos y Giras</div>
+    <div class="grid grid-main">
+      <div class="card featured" onclick="abrirModal('mus1')">
+        <span class="emoji">🎤</span>
+        <div class="kicker">Taylor Swift · The Eras Tour 2.0</div>
+        <h2>200 fechas, 300 millones de dólares: el show más grande de la historia</h2>
+        <hr>
+        <p>África y Asia tendrán fechas por primera vez. Se espera un impacto económico de 5 mil millones de dólares.</p>
+        <div class="byline">Por Redacción Música</div>
+      </div>
+      <div class="card small" onclick="abrirModal('mus2')">
+        <div class="kicker">Bad Bunny · DtMF</div>
+        <h2>Rompe récord: 500M streams en 48h y 7 canciones en Top 10 Global</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+      <div class="card small" onclick="abrirModal('mus3')">
+        <div class="kicker">Oasis · Reunión</div>
+        <h2>Liam y Noel Gallagher confirman 30 conciertos en 2026, incluido Foro Sol</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+    </div>
+    <div class="layout-with-sidebar">
+      <div>
+        <div class="grid grid-dos-columnas">
+          <div class="card" onclick="abrirModal('mus4')">
+            <div class="kicker">🎷 Jazz · Festival CDMX</div>
+            <h2>El Festival de Jazz reúne a 90 mil personas en el Zócalo con Herbie Hancock</h2>
+            <p>Récord de asistencia para un evento de jazz en Latinoamérica.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('mus5')">
+            <div class="kicker">🎧 Electrónica · Tomorrowland</div>
+            <h2>Line up 2026: David Guetta, Martin Garrix y la sorpresa de Daft Punk</h2>
+            <p>La agrupación francesa se presentará después de 5 años.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('mus6')">
+            <div class="kicker">🎸 Rock · Foo Fighters</div>
+            <h2>Foo Fighters anuncian gira de despedida: "25 años de historia"</h2>
+            <p>Pasarán por México, Argentina y Chile en noviembre.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('mus7')">
+            <div class="kicker">🎹 Clásica · Filarmónica de Viena</div>
+            <h2>Concierto sorpresa en la Plaza de las Tres Culturas</h2>
+            <p>Evento gratuito para 50 mil asistentes.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-title">Top Streaming Global</div>
+        <div class="sidebar-item"><div class="si-num">01</div><div class="si-title">Bad Bunny – DtMF</div><div class="si-sub">517M streams</div></div>
+        <div class="sidebar-item"><div class="si-num">02</div><div class="si-title">Taylor Swift – Karma Remix</div><div class="si-sub">348M streams</div></div>
+        <div class="sidebar-item"><div class="si-num">03</div><div class="si-title">Peso Pluma – La People II</div><div class="si-sub">211M streams</div></div>
+        <div class="sidebar-item"><div class="si-num">04</div><div class="si-title">Oasis – Wonderwall (Live)</div><div class="si-sub">98M reproducciones</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODA ==================== -->
+  <div class="seccion" id="sec-moda">
+    <div class="section-title">Moda · Tendencias y Sostenibilidad</div>
+    <div class="grid grid-main">
+      <div class="card featured" onclick="abrirModal('mod1')">
+        <span class="emoji">👗</span>
+        <div class="kicker">Alta Costura · Milán</div>
+        <h2>Minimalismo radical: la moda abraza la simplicidad y la artesanía eterna</h2>
+        <hr>
+        <p>Bottega Veneta, Jil Sander y The Row lideran una estética silenciosa que arrasa en las calles.</p>
+        <div class="byline">Por Sofía Cuevas</div>
+      </div>
+      <div class="card small" onclick="abrirModal('mod2')">
+        <div class="kicker">♻️ Sostenibilidad</div>
+        <h2>Segunda mano de lujo: el mercado creció 48% en 2025 superando al fast fashion</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+      <div class="card small" onclick="abrirModal('mod3')">
+        <div class="kicker">👟 Sneakers</div>
+        <h2>Las zapatillas de los 90 dominan: Air Max 95 y New Balance 574 son las más buscadas</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+    </div>
+    <div class="layout-with-sidebar">
+      <div>
+        <div class="grid grid-dos-columnas">
+          <div class="card" onclick="abrirModal('mod4')">
+            <div class="kicker">💄 Belleza · Limpieza</div>
+            <h2>El maquillaje "clean girl aesthetic" evoluciona a una piel hipernatural</h2>
+            <p>Marcas como Glossier y Merit arrasan en Sephora.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('mod5')">
+            <div class="kicker">🇲🇽 Diseño Mexicano</div>
+            <h2>Tres diseñadores mexicanos deslumbran en Nueva York</h2>
+            <p>Portada de Vogue América.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('mod6')">
+            <div class="kicker">👜 Lujo silencioso</div>
+            <h2>Hermès y Loewe: lista de espera de 2 años para sus bolsos</h2>
+            <p>El lujo silencioso se impone como estatus definitivo.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-title">Tendencias 2026</div>
+        <div class="sidebar-item"><div class="si-num">01</div><div class="si-title">Beige, crudo y arena</div><div class="si-sub">Paleta Pantone 2026</div></div>
+        <div class="sidebar-item"><div class="si-num">02</div><div class="si-title">Tejidos vegetales</div><div class="si-sub">Lino, cáñamo y algas</div></div>
+        <div class="sidebar-item"><div class="si-num">03</div><div class="si-title">Botas vaqueras</div><div class="si-sub">Western contemporáneo</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TECNOLOGÍA ==================== -->
+  <div class="seccion" id="sec-tecnologia">
+    <div class="section-title">Tecnología · Innovación y Futuro</div>
+    <div class="grid grid-main">
+      <div class="card featured" onclick="abrirModal('tec1')">
+        <span class="emoji">🧠</span>
+        <div class="kicker">IA Generativa · Revolución</div>
+        <h2>El 70% de las Fortune 500 ya usa IA para crear y optimizar procesos</h2>
+        <hr>
+        <p>Informe McKinsey: la productividad aumenta un 34% en promedio, pero crece la brecha digital.</p>
+        <div class="byline">Por Redacción Tech</div>
+      </div>
+      <div class="card small" onclick="abrirModal('tec2')">
+        <div class="kicker">🍎 Apple · iPhone 18</div>
+        <h2>Pantalla holográfica y chip A19 Bionic: el smartphone más avanzado</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+      <div class="card small" onclick="abrirModal('tec3')">
+        <div class="kicker">⚛️ Google · Quantum Home</div>
+        <h2>Ordenador cuántico del tamaño de un router: ya está disponible por $4,999 USD</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+    </div>
+    <div class="layout-with-sidebar">
+      <div>
+        <div class="grid grid-dos-columnas">
+          <div class="card" onclick="abrirModal('tec4')">
+            <div class="kicker">🚗 Autos autónomos</div>
+            <h2>Tesla lanza nivel 5 sin intervención humana en 200 ciudades del mundo</h2>
+            <p>Elon Musk anuncia: "El volante será opcional en 2027".</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('tec5')">
+            <div class="kicker">🚀 SpaceX · Marte</div>
+            <h2>Misión tripulada a Marte en 2028: los 6 astronautas ya entrenan</h2>
+            <p>La Starship despegará desde la base Starbase.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('tec6')">
+            <div class="kicker">📡 6G · China</div>
+            <h2>Primera red 6G del mundo: velocidades 50 veces superiores al 5G</h2>
+            <p>Pruebas exitosas en Shanghái.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-title">Gadgets más deseados</div>
+        <div class="sidebar-item"><div class="si-num">01</div><div class="si-title">Apple Vision Pro 2</div><div class="si-sub">Lanzamiento: junio 2026</div></div>
+        <div class="sidebar-item"><div class="si-num">02</div><div class="si-title">Samsung Galaxy Ring 2</div><div class="si-sub">Monitoreo de salud con IA</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== COMIDA ==================== -->
+  <div class="seccion" id="sec-comida">
+    <div class="section-title">Gastronomía · Sabores del Mundo</div>
+    <div class="grid grid-main">
+      <div class="card featured" onclick="abrirModal('com1')">
+        <span class="emoji">🌮</span>
+        <div class="kicker">World's 50 Best</div>
+        <h2>México, por tercer año consecutivo, es la mejor cocina del planeta</h2>
+        <hr>
+        <p>Pujol, Quintonil y Sud 777 en el top 10 global. La cocina mexicana rompe récords.</p>
+        <div class="byline">Por Redacción Gastronómica</div>
+      </div>
+      <div class="card small" onclick="abrirModal('com2')">
+        <div class="kicker">🍜 Ramen · Fiebre global</div>
+        <h2>El ramen artesanal supera a la pizza en búsquedas en Google Trends</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+      <div class="card small" onclick="abrirModal('com3')">
+        <div class="kicker">🥗 Dieta Mediterránea</div>
+        <h2>Estudio de Harvard: reduce un 30% el riesgo de Alzheimer</h2>
+        <div class="byline">Por Staff</div>
+      </div>
+    </div>
+    <div class="layout-with-sidebar">
+      <div>
+        <div class="grid grid-dos-columnas">
+          <div class="card" onclick="abrirModal('com4')">
+            <div class="kicker">🌮 Viral · Birria</div>
+            <h2>Taquero de Guadalajara alcanza 50 millones de vistas en TikTok</h2>
+            <p>Turistas de todo el mundo viajan a su puesto.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('com5')">
+            <div class="kicker">🍷 Vino · Valle de Guadalupe</div>
+            <h2>Cosecha 2025: la mejor en tres décadas para los vinos mexicanos</h2>
+            <p>Premios internacionales para el Nebbiolo mexicano.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+          <div class="card" onclick="abrirModal('com6')">
+            <div class="kicker">🍣 Sostenibilidad · Pesca</div>
+            <h2>Chefs unidos por la pesca sostenible: nuevo sello de certificación azul</h2>
+            <p>Más de 200 restaurantes firman el pacto.</p>
+            <div class="byline">Por Staff</div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-title">Tendencias foodie</div>
+        <div class="sidebar-item"><div class="si-num">01</div><div class="si-title">Fermentación en casa</div><div class="si-sub">Kombucha, kéfir y masa madre</div></div>
+        <div class="sidebar-item"><div class="si-num">02</div><div class="si-title">Proteína de insectos</div><div class="si-sub">Alimentos del futuro</div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 La Gaceta Digital · Todos los derechos reservados · Ciudad de México
+</footer>
+
+<!-- MODAL MULTIMEDIA -->
+<div class="modal-overlay" id="modal" onclick="cerrarModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="cerrarModal(null, true)">✕</button>
+    <div class="modal-kicker" id="modal-kicker"></div>
+    <h2 id="modal-titulo"></h2>
+    <div class="modal-body" id="modal-cuerpo"></div>
+  </div>
+</div>
+
+<script>
+  // Fecha actual
+  const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  document.getElementById('fecha-hoy').innerText = `${new Date().getDate()} de ${meses[new Date().getMonth()]} de ${new Date().getFullYear()}`;
+  
+  // Cambiar sección
+  function cambiarSeccion(id, btn) {
+    document.querySelectorAll('.seccion').forEach(s => s.classList.remove('visible'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById('sec-'+id).classList.add('visible');
+    if(btn) btn.classList.add('active');
+    if(window.innerWidth <= 700) cerrarMenuTotal();
+  }
+  
+  // Base de datos de noticias con contenido multimedia
+  const noticias = {
+    dep1: { kicker:'🏆 Champions · Real Madrid', titulo:'La Decimoctava: Ancelotti hace historia', cuerpo:`<p>En una de las finales más emocionantes, el Real Madrid remontó un 0-2 ante el Manchester City. Vinicius Jr. acortó distancias, Bellingham empató y Rodrygo de cabeza puso el 3-2 definitivo. Es la cuarta Champions de Ancelotti como entrenador.</p><div class="multimedia-container"><div class="multimedia-title">📺 Resumen y celebración</div><div class="img-mock">🏆 Vinicius levantando la orejona</div><div class="media-gallery"><div class="media-thumb">⚽ Gol Bellingham</div><div class="media-thumb">🎙️ Entrevista Ancelotti</div></div><div class="video-mock">🎬 Video: La remontada en 4 minutos</div><div class="audio-mock">🎧 Radio: Narración del último gol</div></div><p>El Santiago Bernabéu explotó de alegría y el equipo blanco suma su decimoctava Copa de Europa.</p>` },
+    dep2: { kicker:'🏀 NBA Playoffs', titulo:'LeBron James desafía al tiempo', cuerpo:`<p>Con 41 años, LeBron James firmó 38 puntos, 12 rebotes y 9 asistencias para eliminar a los Celtics y llevar a los Lakers a la Final del Oeste. "Esto es para los que nunca dudaron", declaró.</p><div class="multimedia-container"><div class="img-mock">🔥 LeBron celebrando</div><div class="media-gallery"><div class="media-thumb">🎥 Highlights LeBron</div></div></div>` },
+    mus1: { kicker:'🎤 Taylor Swift', titulo:'The Eras Tour 2.0 impacta economía global', cuerpo:`<p>Taylor Swift confirmó 200 fechas mundiales. El tour generará un impacto económico de 5 mil millones de dólares. Por primera vez se presentará en África y Asia.</p><div class="multimedia-container"><div class="img-mock">🎤 Taylor en escenario holográfico</div><div class="audio-mock">🎧 Fragmento nuevo sencillo "Timeless"</div></div>` },
+    com1: { kicker:'🌮 México gastronómico', titulo:'Reinado mundial', cuerpo:`<p>México fue elegido como el mejor destino culinario del mundo por tercer año consecutivo. Pujol, Quintonil y Sud 777 brillan en el top global.</p><div class="multimedia-container"><div class="img-mock">🌮 Mole madre de Pujol</div><div class="video-mock">📺 Documental "Raíces"</div></div>` }
+  };
+  // Completar noticias faltantes
+  const idsFaltantes = ['dep3','dep4','dep5','dep6','dep7','mus2','mus3','mus4','mus5','mus6','mus7','mod1','mod2','mod3','mod4','mod5','mod6','tec1','tec2','tec3','tec4','tec5','tec6','com2','com3','com4','com5','com6'];
+  idsFaltantes.forEach(id => {
+    if(!noticias[id]) noticias[id] = { kicker:'📰 Noticia destacada', titulo:'Contenido multimedia exclusivo', cuerpo:`<div class="multimedia-container"><div class="img-mock">📸 Contenido especial</div><div class="media-gallery"><div class="media-thumb">🎥 Video</div><div class="media-thumb">🎧 Audio</div></div><p>Más información disponible en nuestra edición impresa y digital.</p></div>` };
+  });
+  
+  function abrirModal(id) {
+    let n = noticias[id] || { kicker:'La Gaceta', titulo:'Información completa', cuerpo:'<p>Accede a todos los detalles en nuestra plataforma multimedia.</p>' };
+    document.getElementById('modal-kicker').innerText = n.kicker;
+    document.getElementById('modal-titulo').innerText = n.titulo;
+    document.getElementById('modal-cuerpo').innerHTML = n.cuerpo;
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function cerrarModal(e, force) {
+    if(force || (e && e.target.classList && e.target.classList.contains('modal-overlay'))) {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') cerrarModal(null, true); });
+  
+  // Menú hamburguesa
+  const hamburger = document.getElementById('hamburgerBtn');
+  const menuSidebar = document.getElementById('menuSidebar');
+  const overlayMenu = document.getElementById('overlayMenu');
+  function toggleMenu() {
+    menuSidebar.classList.toggle('open');
+    overlayMenu.classList.toggle('visible');
+    hamburger.classList.toggle('active');
+    document.body.style.overflow = menuSidebar.classList.contains('open') ? 'hidden' : '';
+  }
+  function cerrarMenuTotal() {
+    menuSidebar.classList.remove('open');
+    overlayMenu.classList.remove('visible');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', toggleMenu);
+  document.getElementById('closeMenuBtn').addEventListener('click', cerrarMenuTotal);
+  overlayMenu.addEventListener('click', cerrarMenuTotal);
+  document.querySelectorAll('.menu-sidebar a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      let sec = link.getAttribute('data-seccion');
+      if(sec) {
+        let targetBtn = Array.from(document.querySelectorAll('nav button')).find(b => b.innerText.toLowerCase().includes(sec));
+        cambiarSeccion(sec, targetBtn);
+      }
+      cerrarMenuTotal();
+    });
+  });
+  window.addEventListener('resize', () => { if(window.innerWidth > 700) cerrarMenuTotal(); });
+</script>
+</body>
+</html>
